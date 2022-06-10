@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Person from '../Person';
+import { saveLocalStorageValues } from '../../localstorage';
 
 const CounterF = (props) => {
   const [counter, setCounter] = useState(0);
@@ -19,6 +20,12 @@ const CounterF = (props) => {
       ...person,
       [name]: value,
     });
+  };
+
+  const onSaveInfo = (e) => {
+    saveLocalStorageValues('counter', counter);
+    saveLocalStorageValues('person', person);
+    e.preventDefault();
   };
 
   return (
@@ -45,6 +52,7 @@ const CounterF = (props) => {
           value={person.surname || ''}
           onChange={handlerChange}
         />
+        <button onClick={onSaveInfo}>Save infromation</button>
       </section>
       <Person name={person.name} />
     </section>
