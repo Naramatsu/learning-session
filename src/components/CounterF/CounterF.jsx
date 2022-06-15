@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import Person from '../Person';
 import { saveLocalStorageValues } from '../../localstorage';
+import PersonF from '../PersonF';
 
 const CounterF = (props) => {
   const [counter, setCounter] = useState(0);
-  const [person, setPerson] = useState({});
+  const [person, setPerson] = useState({
+    name: '',
+  });
 
   const handleAdd = () => {
     setCounter(counter + 1);
@@ -54,7 +56,7 @@ const CounterF = (props) => {
         />
         <button onClick={onSaveInfo}>Save infromation</button>
       </section>
-      <Person name={person.name} />
+      <PersonF name={person.name} />
     </section>
   );
 };
