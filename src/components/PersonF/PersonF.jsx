@@ -10,7 +10,7 @@ const PersonF = (props) => {
   useEffect(() => {
     const scrollEvent = window.addEventListener('scroll', (e) => {
       setActualScroll(window.scrollY);
-      console.log('actualScroll :>> ', actualScroll);
+      'actualScroll :>> ', actualScroll;
     });
     return () => {
       window.removeEventListener('scroll', scrollEvent);
@@ -33,10 +33,8 @@ const PersonF = (props) => {
     }
   }, [todos]);
 
-  console.log('todos :>> ', todos);
-
   return (
-    <section>
+    <div>
       <h1>Hello from Perons Functional Component</h1>
       <p>
         <b>Name: </b>
@@ -50,7 +48,7 @@ const PersonF = (props) => {
         value={name || ''}
         onChange={(e) => setName(e.target.value)}
       />
-    </section>
+    </div>
   );
 };
 

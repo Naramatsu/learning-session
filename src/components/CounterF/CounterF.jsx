@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
 import { saveLocalStorageValues } from '../../localstorage';
 import PersonF from '../PersonF';
+import { Container, PersonFStyled } from './styledComponents';
+
+const styles = {
+  border: 'solid 1px',
+  padding: '1em',
+  width: '150px',
+};
 
 const CounterF = (props) => {
   const [counter, setCounter] = useState(0);
+  const [pairstyle, setPairStyle] = useState({});
   const [person, setPerson] = useState({
     name: '',
   });
 
   const handleAdd = () => {
     setCounter(counter + 1);
+    if (counter % 2 === 0) {
+      setPairStyle({
+        backgroundColor: 'green',
+      });
+    } else {
+      setPairStyle({
+        backgroundColor: 'red',
+      });
+    }
   };
 
   const handleDecrement = () => {
@@ -31,10 +48,10 @@ const CounterF = (props) => {
   };
 
   return (
-    <section>
+    <Container>
       <h1>Hello From Counter Function Component</h1>
       <section>
-        <p>Counter: {counter}</p>
+        <p style={{ ...styles, ...pairstyle }}>Counter: {counter}</p>
         <button onClick={handleAdd}>+</button>
         <button onClick={handleDecrement}>-</button>
       </section>
@@ -56,8 +73,10 @@ const CounterF = (props) => {
         />
         <button onClick={onSaveInfo}>Save infromation</button>
       </section>
-      <PersonF name={person.name} />
-    </section>
+      <PersonFStyled color="yellow">
+        <PersonF name={person.name} />
+      </PersonFStyled>
+    </Container>
   );
 };
 

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "banana",
+    "price": 12,
+    "availability": 5,
+    "description": "banana biche"
+  },
+  {
+    "id": 2,
+    "name": "manzana roja",
+    "price": 7,
+    "availability": 15,
+    "description": "manzana roja"
+  },
+  {
+    "id": 3,
+    "name": "pera",
+    "price": 10,
+    "availability": 7,
+    "description": "pera normal"
+  },
+  {
+    "id": 4,
+    "name": "fresas",
+    "price": 18,
+    "availability": 25,
+    "description": "fresas"
+  }
+]

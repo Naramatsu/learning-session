@@ -10,11 +10,11 @@ class Person extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log({
+    ({
       prevProps,
       actualProps: this.props,
     });
-    console.log({
+    ({
       prevState,
       actualState: this.state,
     });
@@ -28,11 +28,11 @@ class Person extends Component {
     this.setState({
       actualScroll: window.scrollY,
     });
-    console.log('actualScroll: ', this.state.actualScroll);
+    'actualScroll: ', this.state.actualScroll;
   };
 
   UNSAVE_componentWillUpdate() {
-    console.log('here');
+    ('here');
   }
 
   render() {
