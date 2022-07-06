@@ -1,15 +1,15 @@
-import Counter from "./components/Counter";
-import CounterF from "./components/CounterF";
+import React from 'react'
+import Posts from './components/Posts';
+import PostsContext from './context/Posts/PostsContext';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <h1>Hello Word</h1>
-      <Counter />
-      <br />
       <hr />
-      <br />
-      <CounterF />
+      <PostsContext>
+        <Posts />
+      </PostsContext>
     </div>
   );
 }
