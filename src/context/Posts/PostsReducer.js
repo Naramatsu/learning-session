@@ -1,4 +1,4 @@
-import { FETCH_ALL_POSTS, FETCH_ONE_POST } from "./PostsActions";
+import { FETCH_ALL_POSTS, FETCH_ONE_POST } from './PostsActions';
 
 export default function reducer(state, action) {
   const { type, payload } = action;
@@ -6,14 +6,15 @@ export default function reducer(state, action) {
     case FETCH_ALL_POSTS:
       return {
         ...state,
-        posts: payload
-      }
+        posts: payload,
+      };
     case FETCH_ONE_POST:
       return {
         post: {
-          [payload.id]: payload
-        }
-      }
+          ...state.post,
+          [payload.id]: payload,
+        },
+      };
     default:
       return state;
   }
