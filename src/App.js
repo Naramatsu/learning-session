@@ -5,10 +5,10 @@ function App() {
   return (
     <div className="App">
       <h1>Hello Word</h1>
+      <p>Dairo y Edwin</p>
       <Counter />
       <br />
       <hr />
-      <br />
       <CounterF />
     </div>
   );
